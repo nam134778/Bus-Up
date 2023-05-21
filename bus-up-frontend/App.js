@@ -5,6 +5,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import OnboardingScreen from './src/OnboardingPage/onboardingScreen';
 import LoginScreen from './src/AuthenticationPage/loginScreen';
 import ForgotPassScreen from './src/AuthenticationPage/forgetPassScreen';
+import SendOTPScreen from './src/AuthenticationPage/sendOTPScreen';
+import ResetPasswordScreen from './src/AuthenticationPage/resetPasswordScreen';
+import RegisterScreen from './src/AuthenticationPage/registerScreen';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -42,6 +45,9 @@ export default function App() {
     <NavigationContainer>
     <AppStack.Navigator screenOptions={{headerShown: false}}>
       <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
+      <AppStack.Screen name="SendOTP" component={SendOTPScreen} />
+      <AppStack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+      <AppStack.Screen name="Register" component={RegisterScreen} />
       <AppStack.Screen  options={{
     transitionSpec: {
       open: config,

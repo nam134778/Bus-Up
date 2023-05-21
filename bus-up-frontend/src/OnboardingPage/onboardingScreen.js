@@ -61,18 +61,19 @@ const OnboardingScreen = ({navigation}) => {
                     backgroundColor: 'white',
                     image: <Image source={require('./assets/image1.png')} style={{marginTop: -40}}/>,
                     title: <Text style={{fontSize: 24, fontWeight: 500, marginTop: -40, color: '#3B414B'}}>Tìm đường nhanh chóng</Text>,
+                    subtitle: ''
                 },
                 {
                     backgroundColor: 'white',
                     image: <Image source={require('./assets/image2.png')} />,
                     title: <Text style={{fontSize: 24, fontWeight: 500, marginTop: -20, color: '#3B414B'}}>Tra cứu chi tiết tuyến xe</Text>,
-                    // subtitle: 'Run and earn healthy point to be outstanding in other runner',
+                    subtitle: '',
                 },
                 {
                     backgroundColor: 'white',
                     image: <Image source={require('./assets/image3.png')} />,
                     title: <Text style={{fontSize: 24, fontWeight: 500, marginTop: -10, color: '#3B414B'}}>Đặt vé đơn giản</Text>,
-                    // subtitle: 'Integrated maps and running route enhance your team experience',
+                    subtitle: '',
                 },
             ]}
 
