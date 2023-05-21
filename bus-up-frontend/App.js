@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import OnboardingScreen from './src/OnboardingPage/onboardingScreen';
+import OnboardingScreen from './src/Screens/OnboardingPage/onboardingScreen';
 import LoginScreen from './src/Screens/AuthenticationPage/loginScreen';
 import ForgotPassScreen from './src/Screens/AuthenticationPage/forgetPassScreen';
 import SendOTPScreen from './src/Screens/AuthenticationPage/sendOTPScreen';
