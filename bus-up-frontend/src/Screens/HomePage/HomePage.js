@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { SearchBar } from 'react-native-elements';
+import { Input, SearchBar } from 'react-native-elements';
 // init({
 //   size: 10000,
 //   storageBackend: AsyncStorage,
@@ -15,7 +15,7 @@ import { SearchBar } from 'react-native-elements';
 // });
 
 const HomePage = ({ navigation }) => {
-
+const image = {uri: 'https://reactjs.org/logo-og.png'};
   const handlePress = () => {
   };
   const onLivingRoom = () => {
@@ -57,25 +57,42 @@ const HomePage = ({ navigation }) => {
 
 
   return (
+    <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex= "1"
+    justifyContent ='center'>
     <View
       display="flex"
-      // justifyContent='center'
+      justifyContent='center'
       alignItems="center"
       flexDirection="column"
-      backgroundColor={"#fff"}
+      // backgroundColor={"#fff"}
     >
+      {/* <ImageBackground source={require('./assets/image1.png')} resizeMode="cover" style={styles.image}> */}
       <View
         justifyContent={'center'}
-        backgroundColor={"#2A2A37"}
-        paddingTop="10%"
+        backgroundColor={"#4ABE85"}
+        paddingTop="15%"
         width="100%"
-        height="25%"
+        // height="25%"
       >
-        <SearchBar
-          placeholder="Type Here..."
+        <Text style={styles.baseText}>
+          Chào bạn!
+        </Text>
+        <Input
+        // lightTheme='true'
+          marginTop="5%"
+          backgroundColor={"#365B51"}
+          placeholder="Bạn muốn đi đâu..."
         />
+
       </View>
+      <TouchableOpacity  style={[styles.room_container, styles.shadow_outline]}>
+          
+          <Text style={styles.baseText}>
+            Tra Cứu Tuyến Xe
+          </Text>
+        </TouchableOpacity>
     </View>
+    </ImageBackground>
 
   );
 }
@@ -96,15 +113,17 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    backgroundColor: HomePage.active ? "#00D1FF" : "white",
+    marginTop: "120%",
+    marginBottom: "10%",
+    backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
     flexDirection: "column",
-    width: "40%",
+    width: "80%",
     // height: "30%",
     // borderWidth: 1,
-    borderRadius: 20
+    // borderRadius: 20
   },
   shadow_outline: {
     shadowColor: "#000000",
@@ -118,6 +137,8 @@ const styles = StyleSheet.create({
   },
 
   baseText: {
+    marginTop: "2%",
+    marginBottom: "2%",
     fontWeight: 'bold',
     color: 'white',
     fontSize: 30,

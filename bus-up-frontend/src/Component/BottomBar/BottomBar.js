@@ -80,8 +80,8 @@ const BottomBar = () => {
   return (
     <Tab.Navigator
       initialRouteName="Feed"
-      activeColor="#00D1FF"
-      barStyle={{ backgroundColor: 'white' }}
+      activeColor="#fff"
+      barStyle={{ backgroundColor: '#4ABE85' }}
     >
       <Tab.Screen name="HomeTab" component={HomeStackScreen}
         options={{
@@ -93,7 +93,7 @@ const BottomBar = () => {
       />
       <Tab.Screen name="Static" component={HomePage}
         options={{
-          tabBarLabel: 'Static',
+          tabBarLabel: 'Booking',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="equalizer" color={color} size={29} />
           ),
@@ -101,7 +101,7 @@ const BottomBar = () => {
       />
       <Tab.Screen name="Routines" component={HomePage}
         options={{
-          tabBarLabel: 'Routines',
+          tabBarLabel: 'Noti',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="timer-settings" color={color} size={29} />
           ),
