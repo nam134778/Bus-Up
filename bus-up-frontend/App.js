@@ -9,6 +9,8 @@ import ForgotPassScreen from './src/Screens/AuthenticationPage/forgetPassScreen'
 import SendOTPScreen from './src/Screens/AuthenticationPage/sendOTPScreen';
 import ResetPasswordScreen from './src/Screens/AuthenticationPage/resetPasswordScreen';
 import RegisterScreen from './src/Screens/AuthenticationPage/registerScreen';
+import ChooseRouteScreen from './src/Screens/ChooseRouteScreen/ChooseRouteScreen';
+import ListRouteScreen from './src/Screens/ListRouteScreen/ListRouteScreen';
 import BottomBar from './src/Component/BottomBar/BottomBar';
 import React from 'react';
 import { useState, useEffect } from 'react';
