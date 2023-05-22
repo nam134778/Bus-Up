@@ -2,17 +2,19 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import  { createNativeStackNavigator }from '@react-navigation/native-stack';
 import OnboardingScreen from './src/Screens/OnboardingPage/onboardingScreen';
 import LoginScreen from './src/Screens/AuthenticationPage/loginScreen';
 import ForgotPassScreen from './src/Screens/AuthenticationPage/forgetPassScreen';
 import SendOTPScreen from './src/Screens/AuthenticationPage/sendOTPScreen';
 import ResetPasswordScreen from './src/Screens/AuthenticationPage/resetPasswordScreen';
 import RegisterScreen from './src/Screens/AuthenticationPage/registerScreen';
+import BottomBar from './src/Component/BottomBar/BottomBar';
 import React from 'react';
 import { useState, useEffect } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const AppStack = createStackNavigator();
-
+const Stack =  createNativeStackNavigator();
 const config = {
   animation: 'spring',
   config: {
@@ -43,26 +45,15 @@ export default function App() {
   // }, []);
   return (
     <NavigationContainer>
-    <AppStack.Navigator screenOptions={{headerShown: false}}>
-      <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
-      <AppStack.Screen name="SendOTP" component={SendOTPScreen} />
-      <AppStack.Screen name="ResetPassword" component={ResetPasswordScreen} />
-      <AppStack.Screen name="Register" component={RegisterScreen} />
-      <AppStack.Screen  options={{
-    transitionSpec: {
-      open: config,
-      close: config,
-    },
-  }} name="ForgotPass" component={ForgotPassScreen} />
-      <AppStack.Screen name="Login" 
-       options={{
-        transitionSpec: {
-          open: config,
-          close: config,
-        },
-      }}
-      component={LoginScreen} />
-    </AppStack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="Onboarding" component={OnboardingScreen} />
+      <Stack.Screen name="SendOTP" component={SendOTPScreen} />
+      <Stack.Screen name="ResetPassword" component={ResetPasswordScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+      <Stack.Screen name="ForgotPass" component={ForgotPassScreen} />
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Bottom" component={BottomBar} />
+    </Stack.Navigator>
   </NavigationContainer>
 );
 }
