@@ -7,22 +7,22 @@ import {
 } from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import HomeScreen from "../../Screens/HomeScreen/HomeScreen";
-import RoutineScreen from "../../Screens/RoutineScreen/RoutineScreen";
-import SettingScreen from "../../Screens/SettingScreen/SettingScreen";
-import StaticScreen from "../../Screens/StaticScreen/StaticScreen";
+import HomePage from "../../Screens/HomePage/HomePage";
+// import RoutineScreen from "../../Screens/RoutineScreen/RoutineScreen";
+// import SettingScreen from "../../Screens/SettingScreen/SettingScreen";
+// import StaticScreen from "../../Screens/StaticScreen/StaticScreen";
 
 //livingroom
-import LightListLivingroom from '../../Screens/HomeScreen/LivingRoom/LightList';
-import FanListLivingroom from '../../Screens/HomeScreen/LivingRoom/FanList';
+// import LightListLivingroom from '../../Screens/HomeScreen/LivingRoom/LightList';
+// import FanListLivingroom from '../../Screens/HomeScreen/LivingRoom/FanList';
 
 
-//kitchen
-import LightListKitchen from '../../Screens/HomeScreen/Kitchen/LightList';
-import FanListKitchen from '../../Screens/HomeScreen/Kitchen/FanList';
+// //kitchen
+// import LightListKitchen from '../../Screens/HomeScreen/Kitchen/LightList';
+// import FanListKitchen from '../../Screens/HomeScreen/Kitchen/FanList';
 
-//EditProfile
-import EditProfileScreen from '../../Screens/SettingScreen/EditProfileScreen';
+// //EditProfile
+// import EditProfileScreen from '../../Screens/SettingScreen/EditProfileScreen';
 
 
 //Livingroom
@@ -56,9 +56,9 @@ export const HomeStackScreen = () => (
       cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
     }}
   >
-    <HomeStack.Screen name="Home" component={HomeScreen} />
-    <HomeStack.Screen name="Livingroom" component={LivingroomStackScreen} />
-    <HomeStack.Screen name="Kitchen" component={KitchenStackScreen} />
+    <HomeStack.Screen name="Home" component={HomePage} />
+    <HomeStack.Screen name="Livingroom" component={HomePage} />
+    <HomeStack.Screen name="Kitchen" component={HomePage} />
   </HomeStack.Navigator>
 );
 
@@ -91,7 +91,7 @@ const BottomBar = () => {
           ),
         }}
       />
-      <Tab.Screen name="Static" component={StaticScreen}
+      <Tab.Screen name="Static" component={HomePage}
         options={{
           tabBarLabel: 'Static',
           tabBarIcon: ({ color }) => (
@@ -99,14 +99,14 @@ const BottomBar = () => {
           ),
         }}
       />
-      {/* <Tab.Screen name="Routines" component={RoutineScreen}
+      <Tab.Screen name="Routines" component={HomePage}
         options={{
           tabBarLabel: 'Routines',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="timer-settings" color={color} size={29} />
           ),
-        }} /> */}
-      <Tab.Screen name="SettingTab" component={SettingStackScreen}
+        }} />
+      <Tab.Screen name="SettingTab" component={HomePage}
         options={{
           tabBarLabel: 'Setting',
           tabBarIcon: ({ color }) => (
