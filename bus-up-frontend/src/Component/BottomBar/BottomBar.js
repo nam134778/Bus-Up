@@ -6,24 +6,12 @@ import {
   TransitionPresets,
 } from '@react-navigation/stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import HomePage from "../../Screens/HomePage/HomePage";
-// import RoutineScreen from "../../Screens/RoutineScreen/RoutineScreen";
-// import SettingScreen from "../../Screens/SettingScreen/SettingScreen";
-// import StaticScreen from "../../Screens/StaticScreen/StaticScreen";
-
-//livingroom
-// import LightListLivingroom from '../../Screens/HomeScreen/LivingRoom/LightList';
-// import FanListLivingroom from '../../Screens/HomeScreen/LivingRoom/FanList';
-
-
-// //kitchen
-// import LightListKitchen from '../../Screens/HomeScreen/Kitchen/LightList';
-// import FanListKitchen from '../../Screens/HomeScreen/Kitchen/FanList';
-
-// //EditProfile
-// import EditProfileScreen from '../../Screens/SettingScreen/EditProfileScreen';
-
+import NotificationPage from "../../Screens/NotificationPage/NotificationPage";
+import ChooseRouteScreen from "../../Screens/ChooseRouteScreen/ChooseRouteScreen";
+import ListRouteScreen from "../../Screens/ListRouteScreen/ListRouteScreen";
 
 //Livingroom
 const LivingroomStack = createStackNavigator();
@@ -57,8 +45,8 @@ export const HomeStackScreen = () => (
     }}
   >
     <HomeStack.Screen name="Home" component={HomePage} />
-    <HomeStack.Screen name="Livingroom" component={HomePage} />
-    <HomeStack.Screen name="Kitchen" component={HomePage} />
+    <HomeStack.Screen name="ChooseRoute" component={ChooseRouteScreen} />
+    <HomeStack.Screen name="ListRoute" component={ListRouteScreen} />
   </HomeStack.Navigator>
 );
 
@@ -95,15 +83,15 @@ const BottomBar = () => {
         options={{
           tabBarLabel: 'Booking',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="equalizer" color={color} size={29} />
+            <MaterialCommunityIcons name="ticket-confirmation-outline" color={color} size={29} />
           ),
         }}
       />
-      <Tab.Screen name="Routines" component={HomePage}
+      <Tab.Screen name="Notiication" component={NotificationPage}
         options={{
           tabBarLabel: 'Noti',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="timer-settings" color={color} size={29} />
+            <MaterialIcons name="notifications-none" color={color} size={29} />
           ),
         }} />
       <Tab.Screen name="SettingTab" component={HomePage}

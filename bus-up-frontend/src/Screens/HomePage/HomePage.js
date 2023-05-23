@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
+import { StyleSheet, View, Text,TextInput, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Searchbar from '../../Component/SearchBar/SearchBar';
 import { Input, SearchBar } from 'react-native-elements';
 // init({
 //   size: 10000,
@@ -15,40 +16,13 @@ import { Input, SearchBar } from 'react-native-elements';
 // });
 
 const HomePage = ({ navigation }) => {
-const image = {uri: 'https://reactjs.org/logo-og.png'};
-  const handlePress = () => {
-  };
-  const onLivingRoom = () => {
-    navigation.navigate("Livingroom")
-  };
-  const onKitchen = () => {
-    navigation.navigate("Kitchen")
-  };
 
-
-  const [currentDate, setCurrentDate] = useState('');
-  const [currentTime, setCurrentTime] = useState('');
-  useEffect(() => {
-    var date = new Date().getDate(); //Current Date
-    var month = new Date().getMonth() + 1; //Current Month
-    var year = new Date().getFullYear(); //Current Year
-    setCurrentDate(
-      date + '/' + month + '/' + year
-    );
-  }, []);
-  useEffect(() => {
-    var hours = String(new Date().getHours()); //Current Hours
-    var min = String(new Date().getMinutes()); //Current Minutes
-    if (hours.length == 1) {
-      hours = "0" + hours;
-    }
-    if (min.length == 1) {
-      min = "0" + min;
-    }
-    setCurrentTime(
-      hours + ':' + min
-    );
-  }, []);
+  const handelChooseRoute= () => {
+    navigation.navigate("ListRoute")
+  };
+  const handleSearch= () => {
+    navigation.navigate("ChooseRoute")
+  };
   // const [search,setSearch]=useState[""];
 
   // updateSearch = (value) => {
@@ -82,10 +56,13 @@ const image = {uri: 'https://reactjs.org/logo-og.png'};
           marginTop="5%"
           backgroundColor={"#365B51"}
           placeholder="Bạn muốn đi đâu..."
+          onSubmitEditing={handleSearch}
         />
-
+        <View style={styles.searchbar}>
+                    <Searchbar value={['magnify','#EDEEF1','#555555','Tìm kiếm chuyến xe']} />
+        </View>
       </View>
-      <TouchableOpacity  style={[styles.room_container, styles.shadow_outline]}>
+      <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
           
           <Text style={styles.baseText}>
             Tra Cứu Tuyến Xe
@@ -152,6 +129,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'white',
     fontSize: 60
+  },
+  searchbar: {
+    flex:6,
+    flexDirection: 'column',
   },
   dateText: {
     fontWeight: 'bold',
