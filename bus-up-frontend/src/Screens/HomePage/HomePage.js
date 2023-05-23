@@ -31,7 +31,7 @@ const HomePage = ({ navigation }) => {
 
 
   return (
-    <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex= "1"
+    <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex={1}
     justifyContent ='center'>
     <View
       display="flex"
