@@ -6,6 +6,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Searchbar from '../../Component/SearchBar/SearchBar';
 import { Input, SearchBar } from 'react-native-elements';
+import MapView, { Marker } from 'react-native-maps';
 // init({
 //   size: 10000,
 //   storageBackend: AsyncStorage,
@@ -32,7 +33,9 @@ const HomePage = ({ navigation }) => {
 
   return (
     <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex={1}
-    justifyContent ='center'>
+    justifyContent ='center'
+    height={200}
+    >
     <View
       display="flex"
       justifyContent='center'
@@ -58,16 +61,18 @@ const HomePage = ({ navigation }) => {
           placeholder="Bạn muốn đi đâu..."
           onSubmitEditing={handleSearch}
         />
-        <View style={styles.searchbar}>
+        {/* <View style={styles.searchbar}>
                     <Searchbar value={['magnify','#EDEEF1','#555555','Tìm kiếm chuyến xe']} />
-        </View>
+        </View> */}
       </View>
-      <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
+        <MapView style={styles.map} >
+        <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
           
           <Text style={styles.baseText}>
             Tra Cứu Tuyến Xe
           </Text>
         </TouchableOpacity>
+        </MapView>
     </View>
     </ImageBackground>
 
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "120%",
+    marginTop: "70%",
     marginBottom: "10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
@@ -187,6 +192,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     height: "90%",
     width: "30%"
+  },
+  map: {
+    width: '100%',
+    height: '80%',
+    display: "flex",
+    justifyContent: 'center',
+    alignItems: "center",
+    flexDirection: "column"
   }
 });
 export default HomePage;
