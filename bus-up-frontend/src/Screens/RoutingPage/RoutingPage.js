@@ -1,16 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text,TextInput, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
+import { StyleSheet, View, Text,TextInput, Image, TouchableOpacity, FlatList,ImageBackground } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import MapView, { Marker } from 'react-native-maps';
-// init({
-//   size: 10000,
-//   storageBackend: AsyncStorage,
-//   defaultExpires: 1000 * 3600 * 24,
-//   enableCache: true,
-//   reconnect: false,
-//   sync: {}
-// });
+
 
 const RoutingPage = ({ navigation }) => {
 
@@ -70,16 +64,16 @@ const RoutingPage = ({ navigation }) => {
             Bắt đầu dẫn đường
           </Text>
         </TouchableOpacity>
+
     </View>
 
   );
 }
 const styles = StyleSheet.create({
   container: {
-    gridColumn: "span 4",
-    gridRow: "span 2",
-    backgroundColor: "#fff",
-
+    flex: 1,
+    justifyContent: 'center',
+    backgroundColor: '#4ABE85',
   },
   wrap: {
     // flex: 10,
@@ -151,44 +145,21 @@ const styles = StyleSheet.create({
     fontSize: 10,
     paddingLeft: "5%"
   },
-  room_name: {
-    fontWeight: 'bold',
-    color: 'black',
-    fontSize: 20,
-  },
-  number_devices: {
-    color: 'grey',
-    fontSize: 10,
-  },
-
-  overview: {
-    backgroundColor: "#2A2A37",
-    display: "flex",
-    flexDirection: "column",
-    height: "25%",
-    width: "90%",
-    borderRadius: 20
-  },
-  overviewContent: {
-    display: "flex",
-    flexDirection: "row",
-    alignItems: "center"
-  },
-  overviewItemLeft: {
-    paddingLeft: "5%",
-    display: "flex",
-    alignItems: "center",
-    flexDirection: "column",
-    height: "90%",
-    width: "60%"
-  },
-  overviewItemRight: {
-    paddingLeft: "5%",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    height: "90%",
-    width: "30%"
+  item: {
+    // flex:1,
+    width: '100%',
+    height: '50%',
+    marginTop: "55%",
+    backgroundColor: 'white',
+    position:"absolute",
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderTopRightRadius: 10,
+    borderTopLeftRadius: 10,
+    borderColor:'#DDDDDD',
+    borderBottomWidth:1,
+    
   },
   map: {
     width: '100%',

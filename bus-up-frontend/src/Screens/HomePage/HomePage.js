@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "120%",
+    marginTop: "155%",
     marginLeft:"10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "80%",
     position:"absolute",
-    height: "3%",
+    height: "1%",
     // borderWidth: 1,
     borderRadius: 10
   },
