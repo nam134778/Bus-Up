@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text,TextInput, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Searchbar from '../../Component/SearchBar/SearchBar';
-import { Input, SearchBar } from 'react-native-elements';
+import Entypo from 'react-native-vector-icons/Entypo';
 import MapView, { Marker } from 'react-native-maps';
 // init({
 //   size: 10000,
@@ -19,7 +14,7 @@ import MapView, { Marker } from 'react-native-maps';
 const RoutingPage = ({ navigation }) => {
 
   const handelChooseRoute= () => {
-    navigation.navigate("ListRoute")
+    console.log("Pressed button")
   };
   const handleSearch= () => {
     navigation.navigate("ChooseRoute")
@@ -40,7 +35,7 @@ const RoutingPage = ({ navigation }) => {
       flexDirection="column"
       // backgroundColor={"#fff"}
     >
-      {/* <ImageBackground source={require('./assets/image1.png')} resizeMode="cover" style={styles.image}> */}
+      <View ></View>
       <View
         justifyContent={'center'}
         backgroundColor={"#4ABE85"}
@@ -52,12 +47,12 @@ const RoutingPage = ({ navigation }) => {
           Đi từ 14/2 đường số 10
         </Text>
         <Text style={styles.baseText}>
-          đến
+          đến 149 Nguyến Văn Trỗi
         </Text>
       </View>
         <MapView style={styles.map} >
         <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
-          
+        <Entypo name="direction" color={"#fff"} size={25} />
           <Text style={styles.baseText}>
             Bắt đầu dẫn đường
           </Text>
@@ -85,14 +80,14 @@ const styles = StyleSheet.create({
   },
   room_container: {
     marginTop: "10%",
-    marginRight:"10%",
+    marginLeft:"10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
-    flexDirection: "column",
-    width: "50%",
-    // height: "30%",
+    flexDirection: "row",
+    width: "60%",
+    height: "7%",
     // borderWidth: 1,
     // borderRadius: 20
   },
@@ -112,7 +107,7 @@ const styles = StyleSheet.create({
     marginBottom: "2%",
     fontWeight: 'bold',
     color: 'white',
-    fontSize: 30,
+    fontSize: 22,
     paddingLeft: "5%"
   },
   innerText: {
@@ -186,8 +181,8 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '80%',
     display: "flex",
-    justifyContent: 'center',
-    alignItems: "center",
+    // justifyContent: 'center',
+    // alignItems: "center",
     flexDirection: "column"
   }
 });
