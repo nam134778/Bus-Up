@@ -30,16 +30,16 @@ const RoutingPage = ({ navigation }) => {
     
     <View
       display="flex"
-      justifyContent='center'
-      alignItems="center"
+      // justifyContent='center'
+      // alignItems="center"
       flexDirection="column"
       // backgroundColor={"#fff"}
     >
-      <View ></View>
+      {/* <View ></View> */}
       <View
-        justifyContent={'center'}
+        // justifyContent={'center'}
         backgroundColor={"#4ABE85"}
-        paddingTop="15%"
+        paddingTop="5%"
         width="100%"
         // height="25%"
       >
@@ -51,13 +51,14 @@ const RoutingPage = ({ navigation }) => {
         </Text>
       </View>
         <MapView style={styles.map} >
+        
+        </MapView>
         <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
         <Entypo name="direction" color={"#fff"} size={25} />
           <Text style={styles.baseText}>
             Bắt đầu dẫn đường
           </Text>
         </TouchableOpacity>
-        </MapView>
     </View>
 
   );
@@ -79,17 +80,18 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "10%",
+    marginTop: "35%",
     marginLeft:"10%",
+    position:"absolute",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
     flexDirection: "row",
     width: "60%",
-    height: "7%",
+    height: "1%",
     // borderWidth: 1,
-    // borderRadius: 20
+    borderRadius: 20
   },
   shadow_outline: {
     shadowColor: "#000000",
@@ -179,7 +181,7 @@ const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '80%',
+    height: '100%',
     display: "flex",
     // justifyContent: 'center',
     // alignItems: "center",

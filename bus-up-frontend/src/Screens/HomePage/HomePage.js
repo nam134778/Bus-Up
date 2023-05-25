@@ -32,10 +32,7 @@ const HomePage = ({ navigation }) => {
 
 
   return (
-    <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex={1}
-    justifyContent ='center'
-    height={200}
-    >
+    
     <View
       display="flex"
       justifyContent='center'
@@ -43,7 +40,6 @@ const HomePage = ({ navigation }) => {
       flexDirection="column"
       // backgroundColor={"#fff"}
     >
-      {/* <ImageBackground source={require('./assets/image1.png')} resizeMode="cover" style={styles.image}> */}
       <View
         justifyContent={'center'}
         backgroundColor={"#4ABE85"}
@@ -61,20 +57,17 @@ const HomePage = ({ navigation }) => {
           placeholder="Bạn muốn đi đâu..."
           onSubmitEditing={handleSearch}
         />
-        {/* <View style={styles.searchbar}>
-                    <Searchbar value={['magnify','#EDEEF1','#555555','Tìm kiếm chuyến xe']} />
-        </View> */}
       </View>
         <MapView style={styles.map} >
+        </MapView>
         <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
           
           <Text style={styles.baseText}>
             Tra Cứu Tuyến Xe
           </Text>
         </TouchableOpacity>
-        </MapView>
-    </View>
-    </ImageBackground>
+      </View>
+
 
   );
 }
@@ -95,14 +88,15 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "70%",
-    marginBottom: "10%",
+    marginTop: "10%",
+    // marginBottom: "10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
     flexDirection: "column",
     width: "80%",
+    position:"absolute",
     // height: "30%",
     // borderWidth: 1,
     // borderRadius: 20
@@ -197,6 +191,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '80%',
     display: "flex",
+
     justifyContent: 'center',
     alignItems: "center",
     flexDirection: "column"
