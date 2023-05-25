@@ -35,8 +35,8 @@ const HomePage = ({ navigation }) => {
     
     <View
       display="flex"
-      justifyContent='center'
-      alignItems="center"
+      // justifyContent='center'
+      // alignItems="center"
       flexDirection="column"
       // backgroundColor={"#fff"}
     >
@@ -53,6 +53,7 @@ const HomePage = ({ navigation }) => {
         <Input
         // lightTheme='true'
           marginTop="5%"
+          borderRadius= {10}
           backgroundColor={"#365B51"}
           placeholder="Bạn muốn đi đâu..."
           onSubmitEditing={handleSearch}
@@ -61,7 +62,7 @@ const HomePage = ({ navigation }) => {
         <MapView style={styles.map} >
         </MapView>
         <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
-          
+          <MaterialCommunityIcons  style={{marginLeft:'2%'}} name='bus' size={30} color='white' ></MaterialCommunityIcons>
           <Text style={styles.baseText}>
             Tra Cứu Tuyến Xe
           </Text>
@@ -88,18 +89,18 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "10%",
-    // marginBottom: "10%",
+    marginTop: "120%",
+    marginLeft:"10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
-    flexDirection: "column",
+    flexDirection: "row",
     width: "80%",
     position:"absolute",
-    // height: "30%",
+    height: "3%",
     // borderWidth: 1,
-    // borderRadius: 20
+    borderRadius: 10
   },
   shadow_outline: {
     shadowColor: "#000000",

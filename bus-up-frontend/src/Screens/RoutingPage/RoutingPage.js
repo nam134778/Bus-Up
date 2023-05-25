@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text,TextInput, Image, TouchableOpacity, TouchableHighlight,ImageBackground } from 'react-native';
 import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MapView, { Marker } from 'react-native-maps';
 // init({
 //   size: 10000,
@@ -35,20 +36,30 @@ const RoutingPage = ({ navigation }) => {
       flexDirection="column"
       // backgroundColor={"#fff"}
     >
-      {/* <View ></View> */}
-      <View
-        // justifyContent={'center'}
-        backgroundColor={"#4ABE85"}
-        paddingTop="5%"
-        width="100%"
-        // height="25%"
-      >
-        <Text style={styles.baseText}>
-          Đi từ 14/2 đường số 10
-        </Text>
-        <Text style={styles.baseText}>
-          đến 149 Nguyến Văn Trỗi
-        </Text>
+      <View display="flex"
+      // justifyContent='center'
+      // alignItems="center"
+      backgroundColor={"#4ABE85"}
+      flexDirection="row">
+        <MaterialCommunityIcons  paddingTop="7%" style={{marginLeft:'2%'}} name='arrow-left' size={30} color='white' ></MaterialCommunityIcons>
+        <View
+        
+          // justifyContent={'center'}
+          // backgroundColor={"#4ABE85"}
+          paddingTop="5%"
+          paddingBottom="3%"
+          width="100%"
+          // height="25%"
+        >
+          
+          
+          <Text style={styles.dataText}>
+            Đi từ 14/2 đường số 10
+          </Text>
+          <Text style={styles.dataText}>
+            đến 149 Nguyến Văn Trỗi
+          </Text>
+        </View>
       </View>
         <MapView style={styles.map} >
         
@@ -131,9 +142,9 @@ const styles = StyleSheet.create({
     fontSize: 10
   },
   dataText: {
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     color: 'white',
-    fontSize: 15
+    fontSize: 17
   },
   address: {
     color: 'grey',
