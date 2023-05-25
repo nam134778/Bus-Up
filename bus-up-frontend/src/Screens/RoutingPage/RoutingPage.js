@@ -16,13 +16,13 @@ import MapView, { Marker } from 'react-native-maps';
 //   sync: {}
 // });
 
-const HomePage = ({ navigation }) => {
+const RoutingPage = ({ navigation }) => {
 
   const handelChooseRoute= () => {
     navigation.navigate("ListRoute")
   };
   const handleSearch= () => {
-    navigation.navigate("ChooseRouteScreen")
+    navigation.navigate("ChooseRoute")
   };
   // const [search,setSearch]=useState[""];
 
@@ -32,10 +32,7 @@ const HomePage = ({ navigation }) => {
 
 
   return (
-    <ImageBackground source={require('./assets/map.png')} resizeMode="stretch" flex={1}
-    justifyContent ='center'
-    height={200}
-    >
+    
     <View
       display="flex"
       justifyContent='center'
@@ -52,29 +49,21 @@ const HomePage = ({ navigation }) => {
         // height="25%"
       >
         <Text style={styles.baseText}>
-          Chào bạn!
+          Đi từ 14/2 đường số 10
         </Text>
-        <Input
-        // lightTheme='true'
-          marginTop="5%"
-          backgroundColor={"#365B51"}
-          placeholder="Bạn muốn đi đâu..."
-          onSubmitEditing={handleSearch}
-        />
-        {/* <View style={styles.searchbar}>
-                    <Searchbar value={['magnify','#EDEEF1','#555555','Tìm kiếm chuyến xe']} />
-        </View> */}
+        <Text style={styles.baseText}>
+          đến
+        </Text>
       </View>
         <MapView style={styles.map} >
         <TouchableOpacity onPress={handelChooseRoute} style={[styles.room_container, styles.shadow_outline]}>
           
           <Text style={styles.baseText}>
-            Tra Cứu Tuyến Xe
+            Bắt đầu dẫn đường
           </Text>
         </TouchableOpacity>
         </MapView>
     </View>
-    </ImageBackground>
 
   );
 }
@@ -95,14 +84,14 @@ const styles = StyleSheet.create({
     height: "25%"
   },
   room_container: {
-    marginTop: "70%",
-    marginBottom: "10%",
+    marginTop: "10%",
+    marginRight:"10%",
     backgroundColor:  "#4ABE85" ,
     display: "flex",
     justifyContent: 'center',
     alignItems: "center",
     flexDirection: "column",
-    width: "80%",
+    width: "50%",
     // height: "30%",
     // borderWidth: 1,
     // borderRadius: 20
@@ -202,4 +191,4 @@ const styles = StyleSheet.create({
     flexDirection: "column"
   }
 });
-export default HomePage;
+export default RoutingPage;

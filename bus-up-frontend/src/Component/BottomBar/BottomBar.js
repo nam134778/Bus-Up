@@ -12,6 +12,7 @@ import HomePage from "../../Screens/HomePage/HomePage";
 import NotificationPage from "../../Screens/NotificationPage/NotificationPage";
 import ChooseRouteScreen from "../../Screens/ChooseRouteScreen/ChooseRouteScreen";
 import ListRouteScreen from "../../Screens/ListRouteScreen/ListRouteScreen";
+import RoutingPage from "../../Screens/RoutingPage/RoutingPage";
 
 //Livingroom
 const LivingroomStack = createStackNavigator();
@@ -45,9 +46,22 @@ export const HomeStackScreen = () => (
     }}
   >
     <HomeStack.Screen name="Home" component={HomePage} />
-    <HomeStack.Screen name="ChooseRoute" component={ChooseRouteScreen} />
+    <HomeStack.Screen name="ChooseRouteScreen" component={ChooseRouteStackScreen} />
     <HomeStack.Screen name="ListRoute" component={ListRouteScreen} />
   </HomeStack.Navigator>
+);
+const ChooseRouteStack = createStackNavigator();
+
+export const ChooseRouteStackScreen = () => (
+  <ChooseRouteStack.Navigator
+    screenOptions={{
+      headerShown: false,
+      cardStyleInterpolator: CardStyleInterpolators.forVerticalIOS,
+    }}
+  >
+    <ChooseRouteStack.Screen name="ChooseRoute" component={ChooseRouteScreen} />
+    <ChooseRouteStack.Screen name="Routing" component={RoutingPage} />
+  </ChooseRouteStack.Navigator>
 );
 
 //Setting

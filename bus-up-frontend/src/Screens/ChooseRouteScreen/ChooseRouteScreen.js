@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
 import { ScrollView, FlatList } from 'react-native';
 import Searchbar from '../../Component/SearchBar/SearchBar';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -98,7 +98,6 @@ import {
             <Text style={{fontFamily:'Inter_700Bold', color:'white', fontSize:22}}>31(+10)</Text>
           </View>
       </View>
-        
       <View style={styles.itemDetail2}>
           <View style={{ flexDirection:'row', borderRadius:10, padding:3}}>
             <MaterialCommunityIcons name = 'walk' size={25} color='white'></MaterialCommunityIcons>
@@ -115,8 +114,10 @@ import {
     </View>
   );
 
-
-const ChooseRouteScreen = () => {
+const ChooseRouteScreen = ({ navigation }) => {
+  const choosroute= () => {
+    navigation.navigate("Routing")
+  };
     let [fontsLoaded] = useFonts({
         Inter_100Thin,
         Inter_200ExtraLight,
@@ -128,9 +129,6 @@ const ChooseRouteScreen = () => {
         Inter_800ExtraBold,
         Inter_900Black,
       });
-    
-
-
     if (!fontsLoaded) {
        return null;
     }
@@ -151,7 +149,7 @@ const ChooseRouteScreen = () => {
             <View style={styles.content}>
               <FlatList
                 data={DATA}
-                renderItem={({item}) => <Item title={item.title} />}
+                renderItem={({item}) => <TouchableOpacity onPress={choosroute}><Item title={item.title} /></TouchableOpacity>}
                 keyExtractor={item => item.id}
               />
             </View>
