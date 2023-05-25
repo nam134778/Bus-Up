@@ -64,7 +64,9 @@ const RoutingPage = ({ navigation }) => {
             Bắt đầu dẫn đường
           </Text>
         </TouchableOpacity>
+        <View style={styles}>
 
+        </View>
     </View>
 
   );
@@ -168,6 +170,10 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
     // alignItems: "center",
     flexDirection: "column"
+  },
+  detailroute:{
+    backgroundColor:'red',
   }
+  
 });
 export default RoutingPage;

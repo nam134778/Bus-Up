@@ -13,6 +13,8 @@ import NotificationPage from "../../Screens/NotificationPage/NotificationPage";
 import ChooseRouteScreen from "../../Screens/ChooseRouteScreen/ChooseRouteScreen";
 import ListRouteScreen from "../../Screens/ListRouteScreen/ListRouteScreen";
 import RoutingPage from "../../Screens/RoutingPage/RoutingPage";
+import SettingScreen from '../../Screens/SettingScreen/SettingScreen';
+import AccountSettingScreen from '../../Screens/AccountSettingScreen/AccountSettingScreen';
 
 //Livingroom
 const LivingroomStack = createStackNavigator();
@@ -70,7 +72,7 @@ const SettingStack = createStackNavigator();
 export const SettingStackScreen = () => (
   <SettingStack.Navigator screenOptions={{ headerShown: false }}>
     <SettingStack.Screen name="Setting" component={SettingScreen} />
-    <SettingStack.Screen name="EditProfile" component={EditProfileScreen} />
+    <SettingStack.Screen name="AccountSetting" component={AccountSettingScreen} />
   </SettingStack.Navigator>
 );
 
@@ -108,7 +110,7 @@ const BottomBar = () => {
             <MaterialIcons name="notifications-none" color={color} size={29} />
           ),
         }} />
-      <Tab.Screen name="SettingTab" component={HomePage}
+      <Tab.Screen name="SettingTab" component={SettingStackScreen}
         options={{
           tabBarLabel: 'Setting',
           tabBarIcon: ({ color }) => (
